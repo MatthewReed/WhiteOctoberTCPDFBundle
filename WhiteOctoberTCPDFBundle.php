@@ -27,8 +27,8 @@ class WhiteOctoberTCPDFBundle extends Bundle
                 $constKey = strtoupper($k);
 
                 // All K_ constants are required
-                if (preg_match("/^k_/i", $k))
-                {
+                //if (preg_match("/^k_/i", $k))
+                //{
                     if (!defined($constKey))
                     {
                         $value = $this->container->getParameterBag()->resolveValue($v);
@@ -39,7 +39,7 @@ class WhiteOctoberTCPDFBundle extends Bundle
 
                         define($constKey, $value);
                     }
-                }
+                //}
 
                 // and one special value which TCPDF will use if present
                 if (strtolower($k) == "pdf_font_name_main" && !defined($constKey))
